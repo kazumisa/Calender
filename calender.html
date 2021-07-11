@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カレンダー</title>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="calender.css">
+  <script src="calender.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h3 class="title">【カレンダーアプリケーション】</h3>
+  </header>
+  <h1 class="yyyymm"></h1>
+
+  <div class="select">
+    <select class="year">
+      
+    </select>
+    <select class="month">
+      
+    </select>
+
+    <button onclick="selectYearMonth()">表示</button>
+  </div>
+
+  <div class="button">
+    <button class="prevMonth btn" onclick="prevMonth()"><span class="material-icons-outlined">arrow_back_ios</span></button>
+    <button class="nextMonth btn" onclick="nextMonth()"><span class="material-icons-outlined">arrow_forward_ios</span></button>
+  </div>
+
+  <div class="container">
+
+  </div>
+</body>
+</html>
