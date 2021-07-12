@@ -35,10 +35,13 @@ const selectYearMonth = function() {
   // 選択した月を取得
   const selectedMonth = parseInt(document.querySelector('.month').value, 10);
 
+  // 選択した西暦の整数値をsetMonthの引数として渡す
   showDate.setFullYear(selectedYear);
 
+  // 選択した月の整数値をsetMonthの引数として渡す
   showDate.setMonth(selectedMonth - 1);
 
+  // カレンダー表示
   showCalendaer(showDate);
 }
 
@@ -168,13 +171,9 @@ const createCalender = function(year, month) {
         if(year == today.getFullYear() && month == today.getMonth() && dayCount == today.getDate()) {
           // todayクラスを付与
           tdOfDate.classList.add('today');
-
-          // td要素に日にちを追加
-          tdOfDate.innerHTML = dayCount;
-        } else {
-          // td要素に日にちを追加
-          tdOfDate.innerHTML = dayCount;
-        }
+        } 
+        // td要素に日にちを追加
+        tdOfDate.innerHTML = dayCount;
       }
       /* 日曜日 */
       if(j == 0) {
@@ -205,17 +204,21 @@ const dropDownList = function(year, month) {
 
   // monthクラスの中身を初期化
   selectedMonth.innerHTML = '';
+
+  // ドロップダウンリストで表示したい最大の西暦
+  const maxYear = today.getFullYear() + 5;
   
   /* ループ処理し西暦を取得 */
-  for(let i = 0; i <= 60; i++) {
+  for(let i = 10; i > 0; i--) {
     // option要素を作成
     const option = document.createElement('option');
 
     // option要素に西暦を追加
-    option.innerHTML = (1970 + i) + '年';
+    option.innerHTML = (maxYear - i) + '年';
 
     // 当年の際の処理
-    if(1970 + i == year) {
+    if((maxYear - i) == year) {
+      // selected属性を追加
       option.selected = true;
     }
 
